@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Attendance and Ranking System</title>
+  <link rel="stylesheet" href="CSS.css">
+  <script src="JAVA.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <h1>Student Attendance and Ranking System</h1>
+      <p>Manage student records, attendance, and rankings.</p>
+    </header>
+
+    <section class="panel">
+      <h2>1. Student Registration</h2>
+
+      <form id="studentForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="studentName">Student Name</label>
+            <input
+              type="text"
+              id="studentName"
+              placeholder="Enter student name"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="studentScore">Score (0-100)</label>
+            <input
+              type="number"
+              id="studentScore"
+              min="0"
+              max="100"
+              placeholder="Enter score"
+              required
+            >
+          </div>
+        </div>
+
+        <button type="submit" class="primary-button">
+          Register Student
+        </button>
+
+        <p id="registerMessage" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>2. Attendance Management</h2>
+
+      <div class="attendance-controls">
+        <div class="field">
+          <label for="attendanceDate">Attendance Date</label>
+          <input type="date" id="attendanceDate" required>
+        </div>
+
+        <button type="button" id="loadAttendance" class="secondary-button">
+          Load Attendance
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Status</th>
+              <th>Excuse Reason</th>
+              <th>Attendance %</th>
+            </tr>
+          </thead>
+          <tbody id="attendanceBody"></tbody>
+        </table>
+      </div>
+
+      <button type="button" id="saveAttendance" class="primary-button">
+        Save Attendance
+      </button>
+
+      <p id="attendanceMessage" class="message" aria-live="polite"></p>
+    </section>
+
+    <section class="panel">
+      <h2>3. Search Student</h2>
+
+      <div class="search-controls">
+        <input
+          type="search"
+          id="searchName"
+          placeholder="Enter student name"
+          aria-label="Search student by name"
+        >
+
+        <button type="button" id="searchButton" class="secondary-button">
+          Search
+        </button>
+
+        <button type="button" id="showAll" class="light-button">
+          Show All
+        </button>
+      </div>
+
+      <p id="searchMessage" class="message" aria-live="polite"></p>
+    </section>
+
+    <section class="panel records-section">
+      <h2>4. Student Records and Rankings</h2>
+
+      <div class="ranking-controls">
+        <label for="sortBy">Rank students by:</label>
+
+        <select id="sortBy">
+          <option value="score">Highest Score</option>
+          <option value="attendance">Highest Attendance</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table class="ranking-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Student Name</th>
+              <th>Score</th>
+              <th>Present</th>
+              <th>Absent</th>
+              <th>Excused</th>
+              <th>Attendance %</th>
+              <th>Student Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="studentBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="dashboard">
+      <h2>5. Attendance Dashboard</h2>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span>Total Students</span>
+          <strong id="totalStudents">0</strong>
+        </div>
+
+        <div class="stat-card present-card">
+          <span>Present Today</span>
+          <strong id="presentToday">0</strong>
+        </div>
+
+        <div class="stat-card absent-card">
+          <span>Absent Today</span>
+          <strong id="absentToday">0</strong>
+        </div>
+
+        <div class="stat-card excused-card">
+          <span>Excused Today</span>
+          <strong id="excusedToday">0</strong>
+        </div>
+
+        <div class="stat-card dropped-card">
+          <span>Dropped Students</span>
+          <strong id="droppedStudents">0</strong>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Student Attendance and Ranking System</p>
+    </footer>
+  </main>
+</body>
+</html>

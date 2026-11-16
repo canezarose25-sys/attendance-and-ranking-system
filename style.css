@@ -1,0 +1,417 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #f4f6fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  color: #14982a;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: #6b7280;
+}
+
+.panel,
+.dashboard {
+  margin-bottom: 24px;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.panel h2,
+.dashboard h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #14982a;
+  font-size: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label,
+.ranking-controls label {
+  font-size: 14px;
+  color: #444;
+}
+
+input,
+select {
+  min-height: 40px;
+  padding: 10px 12px;
+  border: 1px solid #d7dce5;
+  border-radius: 6px;
+  background: #fff;
+  color: #333;
+  font: inherit;
+  width: 100%;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #b7d0f7;
+  border-color: #14982a;
+}
+
+input:disabled {
+  background: #f0f1f3;
+  cursor: not-allowed;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.primary-button {
+  color: #fff;
+  background: #14982a;
+}
+
+.primary-button:hover {
+  background: #14982a;
+}
+
+.secondary-button {
+  color: #fff;
+  background: #14982a;
+}
+
+.secondary-button:hover {
+  background: #14982a;
+}
+
+.light-button {
+  color: #344054;
+  background: #e9edf4;
+}
+
+.light-button:hover {
+  background: #dce3ee;
+}
+
+.message {
+  min-height: 18px;
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: #4b6b4b;
+}
+
+.attendance-controls,
+.search-controls {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.attendance-controls .field {
+  min-width: 200px;
+}
+
+.search-controls input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+thead {
+  background: #edf3fc;
+}
+
+th {
+  padding: 12px 10px;
+  color: #273447;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #444;
+  vertical-align: middle;
+}
+
+tbody tr:hover {
+  background: #f9fbff;
+}
+
+/* Attendance Status */
+
+.attendance-status,
+.status-select {
+  min-width: 110px;
+  padding: 7px 9px;
+}
+
+/* Expanding Excuse Reason Box */
+
+.reason-input {
+  display: block;
+  width: 100%;
+  min-width: 220px;
+  min-height: 40px;
+  padding: 10px;
+  border: 1px solid #d7dce5;
+  border-radius: 6px;
+  background: #fff;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  resize: none;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.reason-input:focus {
+  outline: 2px solid #b7d0f7;
+  border-color: #14982a;
+}
+
+.reason-input:disabled {
+  background: #f0f1f3;
+  cursor: not-allowed;
+}
+
+.present-value {
+  color: #247b4b;
+  font-weight: 600;
+}
+
+.absent-value {
+  color: #a12e36;
+  font-weight: 600;
+}
+
+.excused-value {
+  color: #a66b13;
+  font-weight: 600;
+}
+
+/* Student Status Labels */
+
+.active-label {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: #dcfce7;
+  color: #14982a;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.dropped-label {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: #fee2e2;
+  color: #b42318;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* Drop Student Button */
+
+.drop-button {
+  padding: 8px 12px;
+  color: #fff;
+  background: #d52d32;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.drop-button:hover {
+  background: #b71f25;
+}
+
+.delete-button {
+  padding: 8px 12px;
+  color: #fff;
+  background: #d52d32;
+  font-size: 12px;
+}
+
+.delete-button:hover {
+  background: #b71f25;
+}
+
+/* Ranking Section */
+
+.ranking-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.ranking-controls select {
+  min-width: 140px;
+  width: auto;
+  background: #f5f6f8;
+}
+
+.ranking-table {
+  min-width: 900px;
+}
+
+/* Dashboard */
+
+.dashboard {
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card span {
+  color: #667085;
+  font-size: 14px;
+}
+
+.stat-card strong {
+  color: #14982a;
+  font-size: 30px;
+}
+
+.present-card strong {
+  color: #14982a;
+}
+
+.absent-card strong {
+  color: #b52d35;
+}
+
+.excused-card strong {
+  color: #c58b22;
+}
+
+.dropped-card strong {
+  color: #9b3c3c;
+}
+
+/* Footer */
+
+footer {
+  padding: 12px;
+  color: #818898;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 650px) {
+  body {
+    padding: 12px;
+  }
+
+  .page-header h1 {
+    font-size: 23px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .attendance-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .attendance-controls .field {
+    width: 100%;
+  }
+
+  .search-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search-controls input {
+    width: 100%;
+  }
+
+  .ranking-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ranking-controls select {
+    width: 100%;
+  }
+}
